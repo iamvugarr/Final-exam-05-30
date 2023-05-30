@@ -64,6 +64,8 @@
 
 .slider-btn {
   color: white !important;
-  padding: 20px;
+  padding: 20px 30px;
+  line-height: 40px;
+  font-size: 18px;
   background-color: #ffa800;
 }
