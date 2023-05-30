@@ -31,31 +31,110 @@
   background-color: #ffa800;
 }
 
-.texts h2{
-    font-size: 35px;
-    line-height: 1.2;
-    font-weight: 500;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
+.texts h2 {
+  font-size: 35px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.texts p{
-    color: #838383;
-    line-height: 1.92;
-    margin-bottom: 3rem;
+.texts p {
+  color: #838383;
+  line-height: 1.92;
+  margin-bottom: 3rem;
 }
 
 /* Trading */
 
-#trading{
-    padding-block: 110px;
+#trading {
+  padding-block: 110px;
+  background-color: #f5f9fa;
 }
 
-.tarding-header{
-    margin: 0 auto;
-    text-align: center;
+.trading-header {
+  margin: 0 auto;
+  text-align: center;
 }
 
-.tarding-header .texts{
-    
+.trading-header .texts {
+  text-align: center;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.trading-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 79px;
+}
+
+.card {
+  padding: 0 15px;
+  flex: 0 0 33%;
+  max-width: 33%;
+}
+
+.card-container {
+  text-align: center;
+}
+
+.card-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.card-image img {
+  width: 100%;
+}
+
+.card-title {
+  font-weight: 500;
+  font-size: 22px;
+  color: #212121;
+  margin-top: 11px;
+}
+
+.card-container p {
+  font-size: 17px;
+  font-weight: 400;
+  color: #838383;
+  margin-top: 20px;
+}
+
+/* News section */
+
+#news {
+  padding-block: 110px;
+}
+
+.card-img {
+  width: 100%;
+}
+
+.card-img img {
+  width: 100%;
+}
+
+.content {
+  padding: 20px;
+  text-align: left;
+}
+
+.content-top {
+  font-weight: 700;
+  font-size: 24px;
+  color: #212121;
+}
+
+.content p {
+    margin-bottom: 15px;
+  color: #838383;
+}
+
+.content .slider-btn {
+  padding: 12px 15px;
 }

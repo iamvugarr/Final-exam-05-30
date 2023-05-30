@@ -1,10 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Header from "../../../Components/Header/Header";
 import Slider from "../../../Components/Slider/Slider";
 import "./home.css";
+import { Space } from "antd";
+import axios from "axios";
+import Search from "antd/es/input/Search";
 
 const Home = () => {
+  const [data, setData] = useState([]);
+  const [value, setValue] = useState("");
+
+  const getData = async () => {
+    const res = await axios.get("http://localhost:8080/trading");
+    console.log(res.data);
+    setData(
+      res.data.filter((card) =>
+        card.title.toLowerCase().includes(value.toLowerCase())
+      )
+    );
+  };
+
+  useEffect(() => {
+    getData();
+  }, [value]);
+
+  const deleteData = async (id) => {
+    await axios.delete(`http://localhost:8080/trading/${id}`);
+    await getData();
+  };
+
   return (
     <>
       <Helmet>
@@ -53,13 +78,131 @@ const Home = () => {
         <div className="container">
           <div className="trading-header">
             <div className="texts">
-              <div className="line"></div>
-              <h2>Buy and Sell Bitcoin</h2>
+              <div className="line center"></div>
+              <h2>A simple trading system</h2>
+            </div>
+          </div>
+
+          <Space direction="horizontal">
+            <Search
+              style={{
+                marginTop: "10px",
+              }}
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              placeholder="Search..."
+              enterButton
+            />
+          </Space>
+
+          <div className="trading-row">
+            {data.map((cart) => (
+              <div key={cart.title} className="card">
+                <div key={data._id} className="card-container">
+                  <div className="card-image">
+                    <img src={cart.image} alt="" />
+                  </div>
+                  <div className="card-title">{cart.title}</div>
+                  <p>{cart.description}</p>
+                  <button
+                    onClick={() => deleteData(cart._id)}
+                    style={{
+                      marginTop: "10px",
+                      padding: "15px 20px",
+                      border: "none",
+                      borderRadius: "5px",
+                      color: "white",
+                      backgroundColor: "red",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="news">
+        <div className="container">
+          <div className="trading-header">
+            <div className="texts">
+              <div className="line center"></div>
+              <h2>Latest News in Crypto</h2>
             </div>
           </div>
 
           <div className="trading-row">
-            
+            <div className="card">
+              <div className="card-container">
+                <div className="card-img">
+                  <img
+                    src="https://preview.colorlib.com/theme/invest/images/news_1.jpg.webp"
+                    alt=""
+                  />
+                </div>
+                <div className="content">
+                  <div className="content-top">
+                    New Regulations on the Crypto Market
+                  </div>
+                  <p>
+                    Morbi ut dapibus dui. Sed ut iaculis elit, quis varius
+                    mauris. Integer ut ultricies orci.
+                  </p>
+                  <a href="/" className="slider-btn">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="card">
+              <div className="card-container">
+                <div className="card-img">
+                  <img
+                    src="https://preview.colorlib.com/theme/invest/images/news_2.jpg.webp"
+                    alt=""
+                  />
+                </div>
+                <div className="content">
+                  <div className="content-top">
+                    Good News from the Crypto World
+                  </div>
+                  <p>
+                    Morbi ut dapibus dui. Sed ut iaculis elit, quis varius
+                    mauris. Integer ut ultricies orci.
+                  </p>
+                  <a href="/" className="slider-btn">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="card">
+              <div className="card-container">
+                <div className="card-img">
+                  <img
+                    src="https://preview.colorlib.com/theme/invest/images/news_3.jpg.webp"
+                    alt=""
+                  />
+                </div>
+                <div className="content">
+                  <div className="content-top">
+                    Bitcoin price goes to the Moon with new laws
+                  </div>
+                  <p>
+                    Morbi ut dapibus dui. Sed ut iaculis elit, quis varius
+                    mauris. Integer ut ultricies orci.
+                  </p>
+                  <a href="/" className="slider-btn">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
