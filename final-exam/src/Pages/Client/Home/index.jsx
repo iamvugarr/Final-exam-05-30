@@ -3,14 +3,14 @@ import { Helmet } from "react-helmet";
 import Header from "../../../Components/Header/Header";
 import Slider from "../../../Components/Slider/Slider";
 import "./home.css";
-import { Space } from "antd";
+import { Button, Space } from "antd";
 import axios from "axios";
 import Search from "antd/es/input/Search";
 import { useNavigate } from "react-router-dom";
-import {AiOutlineHeart} from 'react-icons/ai'
+import { AiOutlineHeart } from "react-icons/ai";
 
 const Home = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [value, setValue] = useState("");
 
@@ -31,6 +31,11 @@ const Home = () => {
   const deleteData = async (id) => {
     await axios.delete(`http://localhost:8080/trading/${id}`);
     await getData();
+  };
+
+  const handleSortByName = () => {
+    const sortedData = [...data].sort((a, b) => a.title.localeCompare(b.title));
+    setData(sortedData);
   };
 
   return (
@@ -96,13 +101,25 @@ const Home = () => {
               placeholder="Search..."
               enterButton
             />
+
+            <Button
+            onClick={handleSortByName}
+              style={{
+                marginTop: "10px",
+              }}
+            >
+              Sort by Name
+            </Button>
           </Space>
 
           <div className="trading-row">
             {data.map((cart) => (
               <div key={cart._id} className="card">
                 <div className="card-container">
-                  <div onClick={() => navigate(`/${cart._id}`)} className="card-image">
+                  <div
+                    onClick={() => navigate(`/${cart._id}`)}
+                    className="card-image"
+                  >
                     <img src={cart.image} alt="" />
                   </div>
                   <div className="card-title">{cart.title}</div>
@@ -213,7 +230,8 @@ const Home = () => {
       <footer>
         <div className="container">
           <div className="footer-top">
-          Copyright ©2023 All rights reserved | This template is made with <AiOutlineHeart style={{margin: "0 5px"}} />  by Colorlib
+            Copyright ©2023 All rights reserved | This template is made with{" "}
+            <AiOutlineHeart style={{ margin: "0 5px" }} /> by Colorlib
           </div>
           <div className="footer-bottom">
             <ul className="footer-ul">
