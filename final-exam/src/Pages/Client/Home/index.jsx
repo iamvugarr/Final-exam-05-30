@@ -101,7 +101,7 @@ const Home = () => {
             {data.map((cart) => (
               <div key={cart.title} className="card">
                 <div key={data._id} className="card-container">
-                  <div className="card-image">
+                  <div onClick={() => navigate(`/${cart._id}`)} className="card-image">
                     <img src={cart.image} alt="" />
                   </div>
                   <div className="card-title">{cart.title}</div>

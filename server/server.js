@@ -76,7 +76,7 @@ app.delete("/trading/:id", async (req, res) => {
 app.get("/trading/:id", async (req, res) => {
   try {
     const tradingId = req.params.id;
-    const trading = await trading.findById(tradingId);
+    const trading = await Trading.findById(tradingId);
     res.send(trading);
   } catch (err) {
     res.status(404).json({ message: "Not exist" });
