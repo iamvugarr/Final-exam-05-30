@@ -44,7 +44,7 @@ const Header = () => {
           <div className="row">
             <ul className="header-ul">
               <li className="bottom-li">
-                <NavLink>HOME</NavLink>
+                <NavLink to='/'>HOME</NavLink>
               </li>
               <li className="bottom-li">
                 <NavLink>ABOUT US</NavLink>
@@ -66,13 +66,13 @@ const Header = () => {
             <ul className="header-ul">
               <li className="bottom-li">
                 <NavLink>
-                  <BsTelephoneForward />
+                  <BsTelephoneForward style={{margin:"0 5px", color:'black'}}  />
                   +825 25 800 800
                 </NavLink>
               </li>
               <li className="bottom-li">
                 <NavLink>
-                  <AiOutlineMail />
+                  <AiOutlineMail style={{margin:"0 5px", color:'black'}} />
                   office@invest.com
                 </NavLink>
               </li>

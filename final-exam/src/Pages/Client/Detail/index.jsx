@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import Header from "../../../Components/Header/Header";
 
 const Detail = () => {
   const params = useParams();
@@ -17,44 +19,64 @@ const Detail = () => {
     getData();
   }, []);
   return (
-    <section
-      style={{
-        marginTop: "120px",
-      }}
-    >
-      <div className="container">
-        <div
-          style={{
-            display: "flex",
-          }}
-          className="detail-row"
-        >
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Detail Page</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+      <Header />
+      <section
+        style={{
+          marginTop: "120px",
+        }}
+      >
+        <div className="container">
           <div
             style={{
-              flex: "0 0 50%",
-              maxWidth: "50%",
-              textAlign:'center'
+              display: "flex",
             }}
-            className="img"
+            className="detail-row"
           >
-            <img src={data.image} alt="" />
-          </div>
+            <div
+              style={{
+                flex: "0 0 50%",
+                maxWidth: "50%",
+                textAlign: "center",
+              }}
+              className="img"
+            >
+              <img src={data.image} alt="" />
+            </div>
 
-          <div
-            style={{
-              flex: "0 0 50%",
-              maxWidth: "50%",
-            }}
-            className="detail-about"
-          >
-            <h1 style={{
-              marginBottom:'50px'
-            }}>Title: <span style={{fontSize: "24px", color:'red'}}>{data.title}</span> </h1>
-            <h2>Description:  <span style={{fontSize: "24px", color:'green'}}>{data.description}</span> </h2>
+            <div
+              style={{
+                flex: "0 0 50%",
+                maxWidth: "50%",
+              }}
+              className="detail-about"
+            >
+              <h1
+                style={{
+                  marginBottom: "50px",
+                }}
+              >
+                Title:{" "}
+                <span style={{ fontSize: "24px", color: "red" }}>
+                  {data.title}
+                </span>{" "}
+              </h1>
+              <h2>
+                Description:{" "}
+                <span style={{ fontSize: "24px", color: "green" }}>
+                  {data.description}
+                </span>{" "}
+              </h2>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
