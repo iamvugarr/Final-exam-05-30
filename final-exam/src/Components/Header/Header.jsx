@@ -59,7 +59,7 @@ const Header = () => {
                 <NavLink>BLOG</NavLink>
               </li>
               <li className="bottom-li">
-                <NavLink>CONTACT</NavLink>
+                <NavLink to='/admin'>ADD PRODUCT</NavLink>
               </li>
             </ul>
 
