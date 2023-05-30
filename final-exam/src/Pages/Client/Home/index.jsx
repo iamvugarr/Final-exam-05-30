@@ -6,8 +6,10 @@ import "./home.css";
 import { Space } from "antd";
 import axios from "axios";
 import Search from "antd/es/input/Search";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate()
   const [data, setData] = useState([]);
   const [value, setValue] = useState("");
 
