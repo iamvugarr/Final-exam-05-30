@@ -7,6 +7,7 @@ import { Space } from "antd";
 import axios from "axios";
 import Search from "antd/es/input/Search";
 import { useNavigate } from "react-router-dom";
+import {AiOutlineHeart} from 'react-icons/ai'
 
 const Home = () => {
   const navigate = useNavigate()
@@ -208,6 +209,23 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <footer>
+        <div className="container">
+          <div className="footer-top">
+          Copyright ©2023 All rights reserved | This template is made with <AiOutlineHeart style={{margin: "0 5px"}} />  by Colorlib
+          </div>
+          <div className="footer-bottom">
+            <ul className="footer-ul">
+              <li>Home</li>
+              <li>About Us</li>
+              <li>Services</li>
+              <li>Blog</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };

@@ -138,3 +138,37 @@
 .content .slider-btn {
   padding: 12px 15px;
 }
+
+
+/* Footer */
+
+footer{
+  background-color: #212121;
+  padding-block: 30px;
+}
+
+.footer-top{
+  color: #697686;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 15px;
+}
+
+.footer-bottom{
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.footer-ul{
+  display: flex;
+  justify-content: center;
+
+}
+
+.footer-ul li{
+  padding: 15px;
+  color: #697686;
+}
+
+
