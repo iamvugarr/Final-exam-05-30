@@ -1,0 +1,49 @@
+header {
+  width: 100%;
+}
+
+.header-top {
+  width: 100%;
+  background-color: black;
+  padding-block: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  color: white;
+}
+
+nav {
+  margin-left: auto;
+}
+
+.header-ul {
+  display: flex;
+}
+
+li a {
+  color: white;
+  padding: 0 10px;
+}
+
+.header-bottom {
+  width: 100%;
+  background-color: #ffa800;
+  padding-block: 10px;
+}
+
+.bottom-li *{
+    color:  #ffffff;
+}
+
+.bottom-li a{
+    display: inline-block;
+    padding: 20px;
+}

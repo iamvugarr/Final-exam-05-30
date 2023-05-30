@@ -1,0 +1,86 @@
+.slider {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 700px;
+    position: relative;
+}
+
+.slider1 {
+    background-image: url('https://preview.colorlib.com/theme/hexa/images/slider-1.jpg.webp');
+}
+
+.slider2 {
+    background-image: url('https://preview.colorlib.com/theme/hexa/images/slider-2.jpg.webp');
+}
+
+.slider-container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 720px;
+}
+
+.row-slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+    color: #fff;
+}
+
+.row-element {
+    text-align: center !important;
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+    padding-top: 50px;
+}
+
+.row-element h1 {
+    font-size: 40px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: 300 !important;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.first-p {
+    max-width: 800px;
+    line-height: 2;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+.second-p {
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    margin: 0 auto;
+}
+
+.btn-outline {
+    border-width: 2px;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 2px solid white;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+
+.btn-link {
+    font-weight: 400;
+    background-color: transparent;
+}
+
+.btn {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    padding: 1rem;
+    color: #fff;
+}
